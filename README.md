@@ -25,6 +25,26 @@ It is a forum in the sense that it encapsulates discussion. If you think an argu
 - Create a database schema for topics, arguments, relationships, users, and votes.
 - Implement authentication (at minimum: local account + session management).
 
+#### Phase 1-2 implementation prep (ready-to-execute checklist)
+- [ ] Confirm data model boundaries:
+  - [ ] Should `Counterargument` be a separate entity, or just an `Argument` linked as a child?
+  - [ ] What minimum metadata is required for `Source` (URL only vs. title/author/date)?
+  - [ ] How should argument quality be represented initially (simple vote score vs. richer ranking)?
+- [ ] Confirm UX scope for first release:
+  - [ ] Topic page: exact sorting/filter behavior for "strongest arguments".
+  - [ ] Argument page: how many recursive counterargument levels to show by default.
+  - [ ] Submission flow: required fields and validation rules for arguments/counterarguments.
+- [ ] Confirm technical baseline for scaffolding:
+  - [ ] Frontend framework/runtime choice.
+  - [ ] Backend framework/runtime choice.
+  - [ ] Database choice and migration strategy.
+  - [ ] Authentication/session approach.
+- [ ] Execute Phase 2 scaffolding:
+  - [ ] Initialize frontend and backend project structure.
+  - [ ] Add linting/formatting/test tooling and CI workflow.
+  - [ ] Create initial database schema.
+  - [ ] Implement local account + session management.
+
 ### Phase 3: Build the core DebateWiki features (MVP)
 - Topic pages with argument trees and sorting by quality/popularity.
 - Argument detail pages with threaded counterarguments.
