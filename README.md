@@ -1,4 +1,5 @@
 # DebateWiki
+
 An encyclopedia of arguments.
 
 DebateWiki aspires to be the first place you go when you want a multifaceted view of a topic. If you want to find the most common arguments on an issue, DebateWiki should help you find them quickly.
@@ -11,34 +12,61 @@ It is a forum in the sense that it encapsulates discussion. If you think an argu
 
 ## Structure:
 
-The content of ProofWiki will be structured as follows:
-- Topics: These are browsed on the home page of the app. Many topics are expected to be philosophical or political. 
+The content of DebateWiki will be structured as follows:
+
+- Topics: These are browsed on the home page of the app. Many topics are expected to be philosophical or political.
 - Questions: These are contained within topics. A question can be anything from "What causes consciousness?" to "should abortion be allowed?".
-- Satements: Any kind of statement, long or short. Statements are contained in topics and may also be connected to a question.
+- Statements: Any kind of statement, long or short. Statements are contained in topics and may also be connected to a question.
 - Arguments: A piece of text, long or short defending or attacking a statement. An argument can reference other statements or arguments.
-- Counter arguments: An argument defending the statement that another argument is invalid or weak. 
+- Counter arguments: An argument defending the statement that another argument is invalid or weak.
 
 ## Development plan
 
 ### Phase 1: Scaffold a first working app
+
 - Initialize a web app (frontend + backend) and commit the baseline project structure.
 - Add core tooling from the start: linting, formatting, and automated tests in CI.
 - Create a database schema for topics, arguments, relationships, users, and votes.
 - Implement authentication (at minimum: local account + session management).
 
+## Stage 1 draft status
+
+The repository now includes a first runnable draft app:
+
+- Backend + frontend skeleton in `src/` (`src/server.js` and `src/app.js`).
+- Local account registration/login/logout with session handling.
+- Draft database schema in `db/schema.sql` for users, topics, questions, statements, arguments, and votes.
+- Tooling:
+  - Lint: `npm run lint`
+  - Format check: `npm run format:check`
+  - Tests: `npm test`
+  - CI workflow: `.github/workflows/ci.yml`
+
+### Run locally
+
+```bash
+npm install
+npm start
+```
+
+Then open `http://localhost:3000`.
+
 ### Phase 2: Build the core DebateWiki features (MVP)
+
 - Topic pages with argument trees and sorting by quality/popularity.
 - Argument detail pages with threaded counterarguments.
 - Submission flow for new arguments/counterarguments with source links.
 - Basic moderation tools: edit history, reporting, and content review queue.
 
 ### Phase 3: Improve quality and trust
+
 - Add argument quality signals (votes, citation completeness, moderation state).
 - Add rate limits and abuse prevention for posting and voting.
 - Expand testing: unit tests for tree logic, integration tests for API routes, and end-to-end tests for key user flows.
 - Add observability: structured logs and basic performance/error monitoring.
 
 ### Phase 4: Launch and iterate
+
 - Release an alpha with a limited set of topics.
 - Gather feedback on navigation, argument quality, and moderation workflows.
 - Prioritize iteration on search, discovery, onboarding, and contributor reputation.

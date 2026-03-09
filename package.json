@@ -1,0 +1,35 @@
+{
+  "name": "debatewiki",
+  "version": "1.0.0",
+  "description": "An encyclopedia of arguments.",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "node --test",
+    "start": "node src/server.js",
+    "lint": "eslint . --max-warnings=0",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarlIvar/Debatewiki.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/KarlIvar/Debatewiki/issues"
+  },
+  "homepage": "https://github.com/KarlIvar/Debatewiki#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.3.1",
+    "express-session": "^1.19.0"
+  },
+  "devDependencies": {
+    "eslint": "^10.0.3",
+    "prettier": "^3.8.1",
+    "supertest": "^7.2.2"
+  }
+}
